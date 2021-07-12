@@ -16,6 +16,12 @@ body {
   padding: 20px 0;
 }
 
+.filter input{
+    height:25px;
+    width: 200px;
+    outline-color: blue;
+}
+
 .records {
   display: flex;
   justify-content: flex-start;
@@ -25,7 +31,7 @@ body {
   margin-right: 10px;
 }
 
-.records button:active {
+.records button:focus {
   background-color: blue;
   color: wheat;
 }

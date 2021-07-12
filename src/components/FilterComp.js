@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 const FilterComp = props => {
-  console.log(props);
-  const [filterText, setFilterText] = useState(props.userSelected ? '' : '');
+  const [filterText, setFilterText] = useState(''); 
 
   const handleFilterChange = e => {
     setFilterText(e.target.value);

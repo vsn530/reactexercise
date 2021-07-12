@@ -7,7 +7,6 @@ import './styles.css';
 
 export default function App() {
   const [users, setUsers] = useState([]);
-  const [userSelected, setUserSelected] = useState(false);
   const [selectedUsers, setSelectedUsers] = useState(null);
 
   useEffect(() => {
@@ -23,7 +22,6 @@ export default function App() {
             return 0;
           }
         });
-        //console.log(data.results.map(user => user.name.last));
         setUsers(data.results);
       });
   }, []);
@@ -42,21 +40,18 @@ export default function App() {
   };
 
   const handleSelectUser = e => {
-    setUserSelected(true);
     const userEmail = e.target.id;
     const selectedUser = users.find(user => user.email == userEmail);
     selectedUser.viewCount = selectedUser['viewCount']
       ? selectedUser['viewCount'] + 1
       : 1;
     setSelectedUsers([selectedUser]);
-
-    // console.log(e.target.id);
   };
 
   return (
     <div className="container">
       <Header />
-      <FilterComp onFilterChange={onFilterChange} userSelected={userSelected} />
+      <FilterComp onFilterChange={onFilterChange}  />
       <div className="records">
         {users.map((user, i) => (
           <button key={i} id={user.email} onClick={handleSelectUser}>
@@ -68,8 +63,7 @@ export default function App() {
         selectedUsers.map((selectedUser, i) => (
           <UserDetails
             key={i}
-            selectedUser={selectedUser}
-            userSelected={userSelected}
+            selectedUser={selectedUser}            
           />
         ))}
     </div>

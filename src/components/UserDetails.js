@@ -2,7 +2,6 @@ import React from 'react';
 import { getFullName } from '../utils/stringUtils';
 
 const UserDetails = ({ selectedUser }) => {
-  console.log(selectedUser);
   const { name } = selectedUser;
   return (
     <div className="details">
