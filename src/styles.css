@@ -1,0 +1,39 @@
+h1,
+p {
+  font-family: Lato;
+}
+body {
+  background-color: rgb(255, 255, 255);
+}
+.header {
+  color: rgb(0, 71, 186);
+}
+.container {
+  margin: 25px 50px;
+}
+
+.filter {
+  padding: 20px 0;
+}
+
+.records {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.records button {
+  margin-right: 10px;
+}
+
+.records button:active {
+  background-color: blue;
+  color: wheat;
+}
+
+.details {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: rgb(0 0 0 / 13%) 0.0625rem 0.625rem 1.5625rem;
+  background-color: #c4b6b6;
+}
